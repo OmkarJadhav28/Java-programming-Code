@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class program513
+class program512
 {
     public static void main(String arg[])
     {
@@ -29,7 +29,7 @@ class program513
                             Header = Header + " ";
                         }
                         System.out.println(Header);
-                        System.out.println(Header.length());
+                        System.out.println(Header.length);                        
                     }
                 }
             }            

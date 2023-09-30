@@ -1,20 +1,22 @@
 import java.util.*;
 import java.io.*;
 
-class program522
+class program519
 {
     public static void main(String arg[])
     {
+    
         Scanner sobj = new Scanner(System.in);
         byte Header[] = new byte[100];
-        int iRet = 0;
         String HeaderStr;
+        int iRet = 0;
         String Tokens[];
         int iCount = 0;
 
-        System.out.println("----------- Marvellous Packer Unpacker ----------- ");
-        System.out.println("Unpacking Actvity of the appication is started...");
+        System.out.println("-------marvellous Packer Unpacker------");
 
+        System.out.println("Unpacking Activity of the appication is started...");
+        
         System.out.println("Enter the file name which contains the packed data : ");
         String PackFile = sobj.nextLine();
 
@@ -26,9 +28,13 @@ class program522
             while((iRet = inobj.read(Header,0,100)) > 0)
             {
                 HeaderStr = new String(Header);
-                System.out.println(HeaderStr);
 
+                System.out.println(HeaderStr);
+               
                 Tokens = HeaderStr.split(" ");
+
+                System.out.println("File name : "+Tokens[0]);
+                System.out.println("File length : "+Tokens[1]);
 
                 File newfileobj = new File(Tokens[0]);
                 newfileobj.createNewFile();
@@ -37,19 +43,21 @@ class program522
                 int FileSize = Integer.parseInt(Tokens[1]);
                 byte Buffer[] = new byte [FileSize];
 
-                inobj.read(Buffer,0, FileSize);
+                inobj.read(Buffer,0,FileSize);
+                
                 outobj.write(Buffer,0,FileSize);
 
-                System.out.println("File succesfully extracted with name : "+Tokens[0]);
+                System.out.println("File Successfully extracted with name : "+Tokens[0]);
                 iCount++;
-            }
-                System.out.println("------------ Unpacking Summary ------------ ");
-                System.out.println("Total number of files extracted : "+iCount);
-                System.out.println("Thank you for using Marvellous Packer Unpacker..");
+            } 
+                System.out.println("-------Unpacking Summary------");
+                System.out.println("Total number of files scanned : "+iCount);
+
+                System.out.println("Thank you for using Marvellous Packer Unpacker...");   
         }
         catch(Exception obj)
         {
-            System.out.println("Exception occured : "+obj);
+            System.out.println("Exception occured "+obj);
         }
-    }
-}
+    }    
+}    

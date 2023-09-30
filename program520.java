@@ -1,16 +1,18 @@
 import java.util.*;
 import java.io.*;
 
-class program520
+class program519
 {
     public static void main(String arg[])
     {
+    
         Scanner sobj = new Scanner(System.in);
         byte Header[] = new byte[100];
 
-        System.out.println("----------- Marvellous Packer Unpacker ----------- ");
-        System.out.println("Unpacking Actvity of the appication is started...");
+        System.out.println("-------marvellous Packer Unpacker------");
 
+        System.out.println("Unpacking Activity of the appication is started...");
+        
         System.out.println("Enter the file name which contains the packed data : ");
         String PackFile = sobj.nextLine();
 
@@ -21,7 +23,9 @@ class program520
             FileInputStream inobj = new FileInputStream(Packobj);
 
             inobj.read(Header,0,100);
+
             String HeaderStr = new String(Header);
+
             System.out.println(HeaderStr);
 
             String Tokens[];
@@ -37,13 +41,13 @@ class program520
             int FileSize = Integer.parseInt(Tokens[1]);
             byte Buffer[] = new byte [FileSize];
 
-            inobj.read(Buffer,0, FileSize);
-
+            inobj.read(Buffer,0,FileSize);
+            
             outobj.write(Buffer,0,FileSize);
         }
         catch(Exception obj)
         {
-            System.out.println("Exception occured : "+obj);
+            System.out.println("Exception occured "+obj);
         }
-    }
-}
+    }    
+}    

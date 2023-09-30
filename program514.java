@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class program514
+class program512
 {
     public static void main(String arg[])
     {
@@ -14,8 +14,8 @@ class program514
         String Header = null;
 
         System.out.println("Enter the name of packed file that you want to create : ");
-        String PackFile = sobj.nextLine();
-
+        String PackFile  = sobj.nextLine();
+     
         try
         {
             File Packobj = new File(PackFile);
@@ -41,9 +41,8 @@ class program514
                         {
                             Header = Header + " ";
                         }
-
                         byte bHeader[] = Header.getBytes();
-
+                        
                         outobj.write(bHeader,0,bHeader.length);
                     }
                 }
